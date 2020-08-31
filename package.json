@@ -1,0 +1,24 @@
+{
+  "name": "api-solo-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/akinaohira/API-solo-project.git",
+  "author": "akina ohira <akina568325@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "seed": "yarn seeder --configName src/ormconfig.ts seed",
+    "makeMigrations": "yarn orm migration:generate",
+    "migrate": "yarn orm migration:run"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "typeorm": "^0.2.25",
+    "typeorm-seeding": "^1.6.1",
+    "dotenv": "^8.2.0",
+    "uuid": "^7.0.2",
+    "bcrypt": "^4.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
