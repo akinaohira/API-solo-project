@@ -5,7 +5,7 @@ const app = express()
 app.use(express.json())
 
 
-// get dog info
+// get a dog info
 app.get('/inu/:name',async(req,res) => {
   let name = req.params.name;
   let result = await getInu(name)
@@ -31,7 +31,6 @@ async function updateInu(InuName: string, updates: Partial<Inu>): Promise<Inu> {
 
 
 // delete inu information 
-
 app.delete('/inu/:name',async(req,res) => {
   let name = req.params.name
   let result = await removeInu(name)
@@ -50,7 +49,6 @@ app.post('/inu',async(req,res) => {
   if(req.body.name === undefined || req.body.type === undefined){
     res.send(400)
   }
-
   let newdog = req.body;
   let result = await bornNewdog(newdog)
   res.send(result)
@@ -63,7 +61,7 @@ async function bornNewdog(params: {name:string, type:string}):Promise<Inu>{
   return getRepository(Inu).save(newInu);
 }
 
-// first connect to database
+// first connect to database and liting POST
 createConnection().then(()=> {
   app.listen(3000,()=> {
     console.log(`App listening on localhost:${3000}`)
