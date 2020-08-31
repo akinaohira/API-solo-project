@@ -2,14 +2,14 @@ import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm'
 
 @Entity()
 class Inu {
-  @Column()
-  id: string
+  @PrimaryGeneratedColumn()
+  public id: string
 
   @Column()
-  name: string
+  public name: string
 
   @Column()
-  type: string
+  public type: string
 }
 
 export default Inu;

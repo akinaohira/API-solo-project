@@ -5,15 +5,13 @@ export = {
   username: process.env.DB_USER || "inuzu",
   password: process.env.DB_PASSWORD || "inuzu",
   database: process.env.DB_NAME || "inuzu",
-  // chage later
-  entities: ["../entities/**/*.ts"],
-  // change later
-  migrations: ["../migrations/**/*.ts"],
-  // seeds: ["src/seeds/**/*.ts"],
+  entities: ["./entities/**/*.ts"],
+  migrations: ["./migrations/**/*.ts"],
+  seed: ["./seeds/**/*.ts"],
   logging: false,
   migrationsRun: false /* Disable auto-run migration */,
   cli: {
-    entitiesDir: "../entities",
-    migrationsDir: "../migrations"
+    entitiesDir: "./entities",
+    migrationsDir: "./migrations"
   }
 };
