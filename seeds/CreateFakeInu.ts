@@ -9,7 +9,8 @@ export default class CreateInu implements Seeder {
       .insert()
       .into(Inu)
       .values([
-       {id: "1", name : "Edy", type: "Toy Poodle"}
+       {name : "snowBall", type: "Bichon frise"},
+       {name : "Saburou", type: "Shibainu"}
     ])
     .execute();
   }

@@ -6,6 +6,7 @@
   "author": "akina ohira <akina568325@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "seeder": "ts-node -r dotenv/config ./node_modules/typeorm-seeding/dist/cli.js",
     "seed": "yarn seeder --configName ormconfig.ts seed",
     "makeMigrations": "yarn orm migration:generate",
     "migrate": "yarn orm migration:run",

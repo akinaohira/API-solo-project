@@ -37,18 +37,31 @@ app.delete('/inu/:name',async(req,res) => {
   let result = await removeInu(name)
   res.send(result)
 })
-async  function removeInu(name: string):Promise<DeleteResult> {
+
+async  function removeInu(name: string):Promise<string> {
   const inu = await getRepository(Inu).findOne({name: name});
-  const DeleteResult = await getRepository(Inu).delete(inu);
-  return DeleteResult
+  await getRepository(Inu).delete(inu);
+  return `See you soon ${name}`
 }
 
 
 // create dog
-// const newInu = new Inu();
-// newInu.name = name;
-// newInu.type = type;
-// return inuRopository.save(newInu);
+app.post('/inu',async(req,res) => {
+  if(req.body.name === undefined || req.body.type === undefined){
+    res.send(400)
+  }
+
+  let newdog = req.body;
+  let result = await bornNewdog(newdog)
+  res.send(result)
+})
+
+async function bornNewdog(params: {name:string, type:string}):Promise<Inu>{
+  const newInu = new Inu();
+  newInu.name = params.name;
+  newInu.type = params.type;
+  return getRepository(Inu).save(newInu);
+}
 
 // first connect to database
 createConnection().then(()=> {

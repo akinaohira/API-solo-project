@@ -7,7 +7,7 @@ export = {
   database: process.env.DB_NAME || "inuzu",
   entities: ["./entities/**/*.ts"],
   migrations: ["./migrations/**/*.ts"],
-  seed: ["./seeds/**/*.ts"],
+  seeds: ["./seeds/**/*.ts"],
   logging: false,
   migrationsRun: false /* Disable auto-run migration */,
   cli: {
