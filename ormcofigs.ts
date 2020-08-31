@@ -6,14 +6,14 @@ export = {
   password: process.env.DB_PASSWORD || "inuzu",
   database: process.env.DB_NAME || "inuzu",
   // chage later
-  entities: ["src/entities/**/*.ts"],
+  entities: ["../entities/**/*.ts"],
   // change later
-  migrations: ["src/migrations/**/*.ts"],
-  seeds: ["src/seeds/**/*.ts"],
+  migrations: ["../migrations/**/*.ts"],
+  // seeds: ["src/seeds/**/*.ts"],
   logging: false,
   migrationsRun: false /* Disable auto-run migration */,
   cli: {
-    entitiesDir: "src/entities",
-    migrationsDir: "src/migrations"
+    entitiesDir: "../entities",
+    migrationsDir: "../migrations"
   }
 };
